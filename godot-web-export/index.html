@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Switch Runner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Start Screen -->
+    <div id="startScreen" class="screen active">
+        <div class="container">
+            <h1>🌈 Color Switch Runner</h1>
+            <p class="instructions">Match your color to the obstacles to survive!</p>
+            <div class="controls">
+                <p><strong>Desktop:</strong> Space bar or click to change color</p>
+                <p><strong>Mobile:</strong> Tap to change color</p>
+            </div>
+            <div class="high-score" id="highScoreDisplay">High Score: 0</div>
+            <div class="leaderboard" id="leaderboardContainer" style="display: none;">
+                <h3>🏆 Top Scores</h3>
+                <div id="topScoresList"></div>
+            </div>
+            <input type="text" id="playerNameInput" placeholder="Enter your name" maxlength="20">
+            <button id="startButton" class="btn btn-primary">▶ START GAME</button>
+            <button id="closeButton" class="btn btn-secondary">CLOSE</button>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen">
+        <canvas id="gameCanvas"></canvas>
+        <div class="game-ui">
+            <div id="scoreDisplay" class="score">Score: 0</div>
+            <div id="colorIndicator" class="color-indicator">Your Color: <span id="currentColor">🔴</span></div>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOverScreen" class="screen">
+        <div class="container">
+            <h1>Game Over</h1>
+            <div class="final-score" id="finalScore">Score: 0</div>
+            <div id="newHighScore" class="new-high-score" style="display: none;">🎉 NEW HIGH SCORE!</div>
+            <div class="high-score">High Score: <span id="finalHighScore">0</span></div>
+            <button id="restartButton" class="btn btn-primary">🔄 PLAY AGAIN</button>
+            <button id="mainMenuButton" class="btn btn-secondary">MAIN MENU</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

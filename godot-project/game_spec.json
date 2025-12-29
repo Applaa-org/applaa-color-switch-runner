@@ -1,0 +1,43 @@
+{
+  "game": {
+    "name": "Color Switch Runner",
+    "type": "2D",
+    "genre": "arcade",
+    "description": "A fast-paced runner where players switch colors to match obstacles and survive as long as possible"
+  },
+  "settings": {
+    "window": {"width": 800, "height": 600},
+    "physics": {"gravity": 0}
+  },
+  "player": {
+    "name": "Player",
+    "health": 1,
+    "speed": 200,
+    "abilities": ["color_switch"]
+  },
+  "entities": {
+    "obstacles": [
+      {
+        "name": "Colored Obstacle",
+        "types": ["red", "blue", "yellow", "green"],
+        "speed": [3, 8],
+        "behavior": "vertical_movement"
+      }
+    ]
+  },
+  "levels": [
+    {
+      "name": "Endless Runner",
+      "background": "gradient",
+      "obstacles": ["colored_barriers"]
+    }
+  ],
+  "logic": {
+    "winCondition": "survive_continuous",
+    "loseCondition": "color_mismatch_collision",
+    "scoring": {
+      "pointsPerObstacle": 1,
+      "bonusPointsPerMatch": 2
+    }
+  }
+}
